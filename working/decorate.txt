@@ -109,7 +109,7 @@ ACTOR PlasmaPistol : Weapon replaces PlasmaRifle
 	States
 	{
 	Spawn:
-	  PLSP A -1
+	  PLPP A -1
 	  Stop
 	Ready:
 	  PLPI A 1 A_WeaponReady
@@ -270,11 +270,13 @@ ACTOR PulseRifle : Weapon replaces Shotgun
     loop
   Fire:
 	PULS A 0 A_PlayWeaponSound("PlasmaFire")
-	PULS A 1 A_FireCustomMissile("PRShot",-15,1,0,0,0)
-	PULS A 0 A_FireCustomMissile("PRShot",15,0,0,0,0)
-	PULS A 0 A_FireCustomMissile("PRShot",7,0,0,0,7)
-	PULS A 0 A_FireCustomMissile("PRShot",-7,0,0,0,-7)
-	PULS A 0 A_FireCustomMissile("PRShot",0,0,0,0,0)
+	PULS A 1 A_FireCustomMissile("PRShot",-10,1,0,1,0)
+	PULS A 0 A_FireCustomMissile("PRShot",10,0,0,1,0)
+	PULS A 0 A_FireCustomMissile("PRShot",5,0,0,1,5)
+	PULS A 0 A_FireCustomMissile("PRShot",-5,0,0,1,-5)
+	PULS A 0 A_FireCustomMissile("PRShot",5,0,0,1,-5)
+	PULS A 0 A_FireCustomMissile("PRShot",-5,0,0,1,5)
+	PULS A 0 A_FireCustomMissile("PRShot",0,0,0,1,0)
 	PULS BC 4 Bright
 	PULS A 15
 	Goto Ready
